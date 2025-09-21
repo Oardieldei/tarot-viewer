@@ -115,3 +115,34 @@ const superStarTer = () => {
 }
 
 loadLayout()
+
+const wdayWrapper = document.getElementById("what-day__wrapper")
+const wdayToggle = wdayWrapper.querySelector(".what-day__toggle")
+const wdayInput = document.getElementById("wday-input")
+const wdayBtn = document.querySelector(".what-day__btn")
+
+wdayToggle.addEventListener("click", () => {
+	const isOpen = wdayWrapper.getAttribute("data-state") === "open"
+	wdayWrapper.setAttribute("data-state", isOpen ? "closed" : "open")
+})
+
+wdayInput.addEventListener("input", () => {
+	wdayInput.value = wdayInput.value.replace(/\D/g, "")
+	if (wdayInput.value.length > 2) {
+		wdayInput.value = wdayInput.value.slice(0, 2)
+	}
+})
+
+wdayBtn.addEventListener('click', () => {
+  const dayNum = wdayInput.value.trim()
+  if (!dayNum) return
+
+  const targetId = `day${dayNum}`
+  const targetEl = document.getElementById(targetId)
+
+  if (targetEl) {
+    targetEl.scrollIntoView({ behavior: "smooth", block: "center" })
+  } else {
+    wdayInput.value = ""
+  }
+})
