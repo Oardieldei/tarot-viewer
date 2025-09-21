@@ -1,0 +1,253 @@
+{
+  "month": "9",
+  "year": "2025",
+  "monthCard": {
+    "cardType": "kubkov",
+    "cardName": "08"
+  },
+  "days": [
+    {
+      "day": 1,
+      "cardType": "mechei",
+      "cardName": "06",
+      "color": "139202",
+      "description": "День 1",
+      "text": "Описание дня 1"
+    },
+    {
+      "day": 2,
+      "cardType": "pentaklei",
+      "cardName": "07",
+      "color": "a10000",
+      "description": "",
+      "text": "Описание для 2"
+    },
+    {
+      "day": 3,
+      "cardType": "zhezlov",
+      "cardName": "koroleva",
+      "color": "b84c04",
+      "description": "День 3",
+      "text": ""
+    },
+    {
+      "day": 4,
+      "cardType": "sa",
+      "cardName": "03-Imperatrica",
+      "color": "000000",
+      "description": "",
+      "text": ""
+    },
+    {
+      "day": 5,
+      "cardType": "sa",
+      "cardName": "13-Smert",
+      "color": "616161",
+      "description": "Очень длинное описание, чтобы потестить супер пупер мега длину. Ну, не так, чтоб прям ну очень большое описание, просто вот длинное такое, хз.",
+      "text": ""
+    },
+    {
+      "day": 6,
+      "cardType": "kubkov",
+      "cardName": "01",
+      "color": "ffe922",
+      "description": "",
+      "text": "А теперь у нас будет многострочное описание. Сделаем сейчас строчку и размножим ее уууууууу\n....\n---\nА теперь у нас будет многострочное описание. Сделаем сейчас строчку и размножим ее уууууууу\n....\n---\nА теперь у нас будет многострочное описание. Сделаем сейчас строчку и размножим ее уууууууу\n....\n---\nА теперь у нас будет многострочное описание. Сделаем сейчас строчку и размножим ее уууууууу\n....\n---\nА теперь у нас будет многострочное описание. Сделаем сейчас строчку и размножим ее уууууууу\n....\n---\nА теперь у нас будет многострочное описание. Сделаем сейчас строчку и размножим ее уууууууу\n....\n---\nА теперь у нас будет многострочное описание. Сделаем сейчас строчку и размножим ее уууууууу\n....\n---"
+    },
+    {
+      "day": 7,
+      "cardType": "sa",
+      "cardName": "05-Zhrec",
+      "color": "ffe922",
+      "description": "А тут мы попробуем много текста в описании и много текста в другом описании. Блин, Алик, нужно больше синонимизировать текст для добавления контекста и облегчения понимания. Все, спасибо.",
+      "text": "А тут мы попробуем много текста в описании и много текста в другом описании. Блин, Алик, нужно больше синонимизировать текст для добавления контекста и облегчения понимания. Все, спасибо. \n---\nА тут мы попробуем много текста в описании и много текста в другом описании. Блин, Алик, нужно больше синонимизировать текст для добавления контекста и облегчения понимания. Все, спасибо. \n---\nА тут мы попробуем много текста в описании и много текста в другом описании. Блин, Алик, нужно больше синонимизировать текст для добавления контекста и облегчения понимания. Все, спасибо. \n---\nА тут мы попробуем много текста в описании и много текста в другом описании. Блин, Алик, нужно больше синонимизировать текст для добавления контекста и облегчения понимания. Все, спасибо. \n---\nА тут мы попробуем много текста в описании и много текста в другом описании. Блин, Алик, нужно больше синонимизировать текст для добавления контекста и облегчения понимания. Все, спасибо. \n---"
+    },
+    {
+      "day": 8,
+      "cardType": "mechei",
+      "cardName": "02",
+      "color": "ffe922",
+      "description": "",
+      "text": ""
+    },
+    {
+      "day": 9,
+      "cardType": "sa",
+      "cardName": "15-Diavol",
+      "color": "b84c04",
+      "description": "",
+      "text": ""
+    },
+    {
+      "day": 10,
+      "cardType": "sa",
+      "cardName": "17-Zvezda",
+      "color": "1c18e6",
+      "description": "",
+      "text": ""
+    },
+    {
+      "day": 11,
+      "cardType": "sa",
+      "cardName": "01-Mag",
+      "color": "139202",
+      "description": "",
+      "text": ""
+    },
+    {
+      "day": 12,
+      "cardType": "zhezlov",
+      "cardName": "03",
+      "color": "139202",
+      "description": "",
+      "text": ""
+    },
+    {
+      "day": 13,
+      "cardType": "mechei",
+      "cardName": "03",
+      "color": "139202",
+      "description": "",
+      "text": ""
+    },
+    {
+      "day": 14,
+      "cardType": "pentaklei",
+      "cardName": "08",
+      "color": "ffe922",
+      "description": "",
+      "text": ""
+    },
+    {
+      "day": 15,
+      "cardType": "pentaklei",
+      "cardName": "02",
+      "color": "ffe922",
+      "description": "",
+      "text": ""
+    },
+    {
+      "day": 16,
+      "cardType": "kubkov",
+      "cardName": "02",
+      "color": "ffe922",
+      "description": "",
+      "text": ""
+    },
+    {
+      "day": 17,
+      "cardType": "zhezlov",
+      "cardName": "koroleva",
+      "color": "139202",
+      "description": "",
+      "text": ""
+    },
+    {
+      "day": 18,
+      "cardType": "sa",
+      "cardName": "17-Zvezda",
+      "color": "ffe922",
+      "description": "",
+      "text": ""
+    },
+    {
+      "day": 19,
+      "cardType": "sa",
+      "cardName": "02-Zhrica",
+      "color": "139202",
+      "description": "",
+      "text": ""
+    },
+    {
+      "day": 20,
+      "cardType": "sa",
+      "cardName": "03-Imperatrica",
+      "color": "1c18e6",
+      "description": "",
+      "text": ""
+    },
+    {
+      "day": 21,
+      "cardType": "kubkov",
+      "cardName": "04",
+      "color": "a10000",
+      "description": "",
+      "text": ""
+    },
+    {
+      "day": 22,
+      "cardType": "mechei",
+      "cardName": "02",
+      "color": "ffe922",
+      "description": "",
+      "text": ""
+    },
+    {
+      "day": 23,
+      "cardType": "pentaklei",
+      "cardName": "07",
+      "color": "000000",
+      "description": "",
+      "text": ""
+    },
+    {
+      "day": 24,
+      "cardType": "kubkov",
+      "cardName": "09",
+      "color": "139202",
+      "description": "",
+      "text": ""
+    },
+    {
+      "day": 25,
+      "cardType": "sa",
+      "cardName": "07-Kolesnica",
+      "color": "ffe922",
+      "description": "",
+      "text": ""
+    },
+    {
+      "day": 26,
+      "cardType": "pentaklei",
+      "cardName": "04",
+      "color": "139202",
+      "description": "",
+      "text": ""
+    },
+    {
+      "day": 27,
+      "cardType": "zhezlov",
+      "cardName": "01",
+      "color": "616161",
+      "description": "",
+      "text": ""
+    },
+    {
+      "day": 28,
+      "cardType": "sa",
+      "cardName": "14-Umerennost",
+      "color": "a10000",
+      "description": "",
+      "text": ""
+    },
+    {
+      "day": 29,
+      "cardType": "zhezlov",
+      "cardName": "rycar",
+      "color": "000000",
+      "description": "",
+      "text": ""
+    },
+    {
+      "day": 30,
+      "cardType": "sa",
+      "cardName": "11-Sila",
+      "color": "ffe922",
+      "description": "",
+      "text": ""
+    }
+  ],
+  "theme": "meditation",
+  "deck": "silicon-dawn",
+  "introText": "Это мое описание и не нужно тут ничего прям выделываться. Просто напишем текст, чтобы посмотреть, как это будет выглядеть на релизе. Добавить что-нибудь еще? Пожалуй, нет. Вряд ли тут будет очень много слов. Все, пока!"
+}

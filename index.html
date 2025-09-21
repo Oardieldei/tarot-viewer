@@ -11,6 +11,36 @@
 	<title>Виртуальный расклад</title>
 </head>
 <body>
-	
+	<div class="full-wrapper">
+		<header class="header"></header>
+		<div class="intro__wrapper"></div>
+		<div class="calendar__wrapper">
+			<div class="calendar__days-names">
+				<div class="calendar__days-name_day">Понедельник</div>
+				<div class="calendar__days-name_day">Вторник</div>
+				<div class="calendar__days-name_day">Среда</div>
+				<div class="calendar__days-name_day">Четверг</div>
+				<div class="calendar__days-name_day">Пятница</div>
+				<div class="calendar__days-name_day">Суббота</div>
+				<div class="calendar__days-name_day">Воскресенье</div>
+			</div>
+			<div class="calendar__dates"></div>
+		</div>
+	</div>
+	<div class="what-day">
+		<div id="what-day__wrapper" class="what-day" data-state="closed">
+			<button type="button" class="what-day__toggle" title="Открыть выбор дня">
+				<span class="what-day__chevron">&lt;</span>
+			</button>
+			<div id="what-day-panel" class="what-day__panel">
+				<label for="wday-input" class="what-day__label">Выбрать день:</label>
+				<input id="wday-input" class="what-day__input" type="number" inputmode="numeric" name="wday">
+				<button type="button" class="what-day__btn" title="Подобрать">
+					<img class="what-day__btn_img" src="./img/magic-wand.png" alt="Волшебная палочка">
+				</button>
+			</div>
+		</div>
+	</div>
+	<script type="module" src="./js/script.js"></script>
 </body>
 </html>
