@@ -24,6 +24,7 @@
 
 .card-display__flex {
 	display: flex;
+	position: relative;
 }
 
 .card-display__flex > div {

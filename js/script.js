@@ -49,6 +49,7 @@ const cardDisplayInfoDate = cardDisplayInfo.children[0]
 const cardDisplayInfoTitle = cardDisplayInfo.children[1]
 const cardDisplayInfoColor = cardDisplayInfo.children[2]
 const cardDisplayInfoText = cardDisplayInfo.children[3]
+const cardDisplayBlock = cardDisplay.children[0]
 
 const createCardImageUrl = (dateNum) => {
 	const cardPath = (fullInfoObject.days[dateNum - 1].cardType === 'sa')
@@ -168,8 +169,25 @@ const changeForm = (dateNum) => {
 	changeText(dateNum)
 }
 
+const changeFormPosition = () => {
+	cardDisplayBlock.style.top = '0px'
+	const formHeight = cardDisplayBlock.offsetHeight
+	const scrollY = window.scrollY
+	const windowHeight = window.innerHeight
+
+	if (scrollY + formHeight > scrollY + windowHeight) {
+		const adjustedTop = Math.max(0, scrollY + windowHeight - formHeight)
+		cardDisplayBlock.style.top = adjustedTop + 'px'
+		cardDisplayCloser.style.top = adjustedTop + 'px'
+	} else {
+		cardDisplayBlock.style.top = scrollY + 'px'
+		cardDisplayCloser.style.top = scrollY + 30 + 'px'
+	}
+}
+
 const showForm = (dateNum) => {
 	changeForm(dateNum)
+	changeFormPosition()
 
 	requestAnimationFrame(() => {
     cardDisplay.classList.add('show-on')
