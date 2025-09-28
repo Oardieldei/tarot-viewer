@@ -8,14 +8,18 @@
 	left: 0;
 	width: 100%;
 	min-height: 100%;
-	display: none;
+	display: block;
 	z-index: 998;
 	background: #000000dc;
 	padding: 80px;
+	opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
 }
 
 .show-on {
-	display: block;
+	opacity: 1;
+  visibility: visible;
 }
 
 .card-display__flex {

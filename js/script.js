@@ -171,7 +171,9 @@ const changeForm = (dateNum) => {
 const showForm = (dateNum) => {
 	changeForm(dateNum)
 
-	cardDisplay.classList.add('show-on')
+	requestAnimationFrame(() => {
+    cardDisplay.classList.add('show-on')
+  })
 }
 
 const closeForm = () => {
