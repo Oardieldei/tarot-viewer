@@ -168,19 +168,27 @@ const changeForm = (dateNum) => {
 }
 
 const changeFormPosition = () => {
-	cardDisplayBlock.style.top = '0px'
-	const formHeight = cardDisplayBlock.offsetHeight
-	const scrollY = window.scrollY
-	const windowHeight = window.innerHeight
+  const formHeight = cardDisplayBlock.offsetHeight
+  const windowHeight = window.innerHeight
+  const scrollY = window.scrollY
+  const pageHeight = document.body.scrollHeight
 
-	if (scrollY + formHeight > scrollY + windowHeight) {
-		const adjustedTop = Math.max(0, scrollY + windowHeight - formHeight)
-		cardDisplayBlock.style.top = adjustedTop + 'px'
-		cardDisplayCloser.style.top = adjustedTop + 'px'
-	} else {
-		cardDisplayBlock.style.top = scrollY + 'px'
-		cardDisplayCloser.style.top = scrollY + 30 + 'px'
-	}
+  let top
+
+  if (formHeight <= windowHeight) {
+    top = scrollY 
+  } 
+  
+  else if (scrollY + formHeight <= pageHeight) {
+    top = scrollY 
+  } 
+  
+  else {
+    top = pageHeight - formHeight 
+  }
+
+  cardDisplayBlock.style.top = `${top}px`
+  cardDisplayCloser.style.top = `${top + 30}px`
 }
 
 const showForm = (dateNum) => {
