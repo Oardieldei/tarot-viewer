@@ -133,7 +133,7 @@ const createCardReadableCardname = (cardType, cardName) => {
 	let resString = ''
 
 	if (cardType === 'sa') {
-		resString = `${readableSuits[cardType]}<br>${readableArcans[cardName]}`
+		resString = `${readableSuits[cardType]} ${readableArcans[cardName]}`
 	} else {
 		resString = `${readableCardNums[cardName]} ${readableSuits[cardType]}`
 	}
@@ -261,9 +261,56 @@ const renderCalendar = (y, m) => {
 	createEmptyCellsAfter(y, m)
 }
 
+const introWrapper = document.querySelector('.intro__wrapper')
+const introTitle = introWrapper.children[0].children[0]
+const introCardWrapper = introWrapper.children[1]
+const introCardImage = introCardWrapper.children[1]
+const introCardName = introCardWrapper.children[2]
+const helloText = document.querySelector('.hello-text')
+
+const changeTitle = () => {
+	const monthRu = [
+		'январь',
+		'февраль',
+		'март',
+		'апрель',
+		'май',
+		'июнь',
+		'июль',
+		'август',
+		'сентябрь',
+		'октябрь',
+		'ноябрь',
+		'декабрь'
+	]
+	introTitle.innerText = `Планер на картах Таро на ${monthRu[fullInfoObject.month - 1]}`
+}
+
+const changeMonthCardImage = () => {
+	const cardPath = (fullInfoObject.monthCard.cardType === 'sa')
+	? `./img/cards/${fullInfoObject.deck}/${fullInfoObject.monthCard.cardName}.jpg`
+	: `./img/cards/${fullInfoObject.deck}/${fullInfoObject.monthCard.cardType}-${fullInfoObject.monthCard.cardName}.jpg`
+
+	introCardImage.src = cardPath
+}
+
+const changeMonthCardName = () => {
+	const newName = createCardReadableCardname(fullInfoObject.monthCard.cardType, fullInfoObject.monthCard.cardName)
+
+	introCardName.innerText = newName
+}
+
+const changeHelloText = () => {
+	helloText.innerText = fullInfoObject.introText
+}
+
 const superStarTer = () => {
 	applyTheme()
 	renderCalendar(fullInfoObject.year, fullInfoObject.month)
+	changeTitle()
+	changeMonthCardImage()
+	changeMonthCardName()
+	changeHelloText()
 }
 
 loadLayout()

@@ -29,31 +29,28 @@
 	border-radius: 10px;
 }
 
-.intro__date-show_month {
-	text-transform: uppercase;
-}
-
-.intro__date-show > * {
+.intro__date-show_title {
 	text-align: center;
 	font-family: "Poiret One", sans-serif;
 	font-weight: 700;
-}
+	font-size: 64px;
+	color: #FFF;
+	mix-blend-mode: multiply;
+	padding: 10px 20px;
+	border-radius: 20px;
+	}
 
-.intro__date-show_month {
-	font-size: 84px;
-}
-
-.intro__date-show_year {
-	font-size: 75px;
-}
+	.hello-text {
+		text-align: center;
+		font-family: "Poiret One", sans-serif;
+		font-size: 32px;
+		color: #000;
+		font-style: italic;
+	}
 
 @media (max-width: 1023px) {
-	.intro__date-show_month {
+	.intro__date-show_title {
 		font-size: 48px;
-	}
-	
-	.intro__date-show_year {
-		font-size: 40px;
 	}
 
 	.intro__month-info > * {
@@ -63,15 +60,15 @@
 	.intro__month-info > p {
 		font-size: 18px;
 	}
+
+	.hello-text {
+		font-size: 24px;
+	}
 }
 
 @media (max-width: 767px) {
-	.intro__date-show_month {
+	.intro__date-show_title {
 		font-size: 36px;
-	}
-	
-	.intro__date-show_year {
-		font-size: 30px;
 	}
 
 	.intro__month-info > * {
@@ -80,6 +77,10 @@
 
 	.intro__month-info > p {
 		font-size: 14px;
+	}
+
+	.hello-text {
+		font-size: 18px;
 	}
 }
 
@@ -92,16 +93,8 @@
 	.intro__wrapper > * {
 		width: 100%;
 	}
-
-	.intro__date-show {
-		display: flex;
-		flex-direction: row;
-		gap: 20px;
-		justify-content: center;
-	}
 	
-	.intro__date-show_month,
-	.intro__date-show_year {
+	.intro__date-show_title {
 		font-size: 48px;
 	}
 
@@ -110,6 +103,10 @@
 	}
 
 	.intro__month-info > p {
+		font-size: 36px;
+	}
+
+	.hello-text {
 		font-size: 36px;
 	}
 }
