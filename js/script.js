@@ -98,7 +98,7 @@ const createCardReadableCardname = (cardType, cardName) => {
 	}
 
 	const readableSuits = {
-		'sa': 'Старший аркан',
+		'sa': 'Старший Аркан',
 		'kubkov': 'кубков',
 		'mechei': 'мечей',
 		'pentaklei': 'пентаклей',

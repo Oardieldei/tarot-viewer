@@ -1,0 +1,115 @@
+.intro__wrapper {
+	display: flex;
+	align-items: center;
+}
+
+.intro__wrapper > * {
+	width: 50%;
+}
+
+.intro__month-info {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.intro__month-info > p {
+	font-family: "Marck Script", cursive;
+	font-size: 24px;
+	color: #000;
+	text-align: center;
+}
+
+.intro__month-info > * {
+	max-width: 300px;
+	margin: 0 auto;
+}
+
+.intro__month-info_image {
+	border-radius: 10px;
+}
+
+.intro__date-show_month {
+	text-transform: uppercase;
+}
+
+.intro__date-show > * {
+	text-align: center;
+	font-family: "Poiret One", sans-serif;
+	font-weight: 700;
+}
+
+.intro__date-show_month {
+	font-size: 84px;
+}
+
+.intro__date-show_year {
+	font-size: 75px;
+}
+
+@media (max-width: 1023px) {
+	.intro__date-show_month {
+		font-size: 48px;
+	}
+	
+	.intro__date-show_year {
+		font-size: 40px;
+	}
+
+	.intro__month-info > * {
+		max-width: 200px;
+	}
+
+	.intro__month-info > p {
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 767px) {
+	.intro__date-show_month {
+		font-size: 36px;
+	}
+	
+	.intro__date-show_year {
+		font-size: 30px;
+	}
+
+	.intro__month-info > * {
+		max-width: 150px;
+	}
+
+	.intro__month-info > p {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 599px) {
+	.intro__wrapper {
+		flex-direction: column;
+		gap: 30px;
+	}
+
+	.intro__wrapper > * {
+		width: 100%;
+	}
+
+	.intro__date-show {
+		display: flex;
+		flex-direction: row;
+		gap: 20px;
+		justify-content: center;
+	}
+	
+	.intro__date-show_month,
+	.intro__date-show_year {
+		font-size: 48px;
+	}
+
+	.intro__month-info > * {
+		max-width: 100%;
+	}
+
+	.intro__month-info > p {
+		font-size: 36px;
+	}
+}
