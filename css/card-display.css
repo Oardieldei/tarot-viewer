@@ -69,18 +69,20 @@
 
 .card-display__info_color_div {
 	background-color: var(--card-color);
-	border-radius: 6px;
-	width: 50px;
+	border-radius: 50%;
+	width: 20px;
 	height: 20px;
-	animation: shadow 1s infinite alternate;
+	animation: shadow .7s infinite alternate;
 }
 
 .card-display__info_text {
 	max-width: 580px;
+	white-space: pre-line;
 }
 
 .card-display__info_color_text {
-	max-width: 510px;
+	max-width: 540px;
+	white-space: pre-line;
 }
 
 .card-display__info_date,
@@ -141,7 +143,7 @@
 	}
 
 	.card-display__info_color_text {
-		max-width: calc(80% - 70px);
+		max-width: calc(80% - 40px);
 	}
 
 	.card-display__info_date,

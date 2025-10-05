@@ -78,9 +78,7 @@ const createCardReadableDate = (dateNum) => {
 	return `${dateNum} ${readableMonthes[fullInfoObject.month]}`
 }
 
-const createCardReadableCardname = (dateNum) => {
-	const cardType = fullInfoObject.days[dateNum - 1].cardType
-	const cardName = fullInfoObject.days[dateNum - 1].cardName
+const createCardReadableCardname = (cardType, cardName) => {
 
 	const readableCardNums = {
 		"01": "Туз",
@@ -164,7 +162,7 @@ const changeForm = (dateNum) => {
 	const cardPath = createCardImageUrl(dateNum)
 	cardDisplayImg.src = cardPath
 	cardDisplayInfoDate.innerText = createCardReadableDate(dateNum)
-	cardDisplayInfoTitle.innerHTML = createCardReadableCardname(dateNum)
+	cardDisplayInfoTitle.innerHTML = createCardReadableCardname(fullInfoObject.days[dateNum - 1].cardType, fullInfoObject.days[dateNum - 1].cardName)
 	changeColor(dateNum)
 	changeText(dateNum)
 }
@@ -190,8 +188,8 @@ const showForm = (dateNum) => {
 	changeFormPosition()
 
 	requestAnimationFrame(() => {
-    cardDisplay.classList.add('show-on')
-  })
+		cardDisplay.classList.add('show-on')
+	})
 }
 
 const closeForm = () => {
@@ -199,6 +197,7 @@ const closeForm = () => {
 }
 
 cardDisplayCloser.addEventListener('click', closeForm)
+
 cardDisplay.addEventListener('click', (e) => {
 	if (e.target === cardDisplay) closeForm()
 })
