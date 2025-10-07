@@ -75,7 +75,7 @@ const createCardReadableDate = (dateNum) => {
 		'декабря'
 	]
 
-	return `${dateNum} ${readableMonthes[fullInfoObject.month]}`
+	return `${dateNum} ${readableMonthes[fullInfoObject.month - 1]}`
 }
 
 const createCardReadableCardname = (cardType, cardName) => {
@@ -146,7 +146,7 @@ const changeColor = (dateNum) => {
 	const currDesc = fullInfoObject.days[dateNum - 1].description
 
 	cardDisplayInfoColor.children[0].style.setProperty('--card-color', `#${currColor}`)
-	cardDisplayInfoColor.children[1].innerText = `Цвет ауры дня. ${currDesc}`
+	cardDisplayInfoColor.children[1].innerText = `Цвет энергий дня. ${currDesc}`
 }
 
 const changeText = (dateNum) => {
