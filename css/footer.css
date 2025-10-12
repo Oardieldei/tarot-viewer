@@ -1,7 +1,7 @@
 .footer {
 	display: flex;
 	justify-content: space-between;
-	width: 180px;
+	width: 280px;
 	margin: 0 auto;
 	position: relative;
 	padding-top: 20px;
@@ -13,14 +13,14 @@
 	top: 0;
 	left: 50%;
 	transform: translateX(-50%);
-	width: 250px;
+	width: 300px;
 	height: 2px;
 	background-color: #414141;
 	border-radius: 2px;
 }
 
 .smedia {
-	width: 45px;
+	width: 70px;
 	height: 45px;
 	position: relative;
 	display: flex;
@@ -29,13 +29,13 @@
 }
 
 .smedia > img {
-	width: 80%;
+	width: 34px;
 }
 
 .smedia::before,
 .smedia::after {
 	position: absolute;
-	width: 40px;
+	width: 45px;
 	height: 2px;
 	background: #fff;
 	content: '';
