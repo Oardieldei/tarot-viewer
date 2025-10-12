@@ -48,9 +48,7 @@ const applyTheme = () => {
 		img.src = highRes
 
 		img.onload = () => {
-			requestAnimationFrame(() => {
-				document.body.style.setProperty('--bg-image', `url('${highRes}')`)
-			})
+			document.body.style.setProperty('--bg-image', `url('${highRes}')`)
 		}
 	})
 }
