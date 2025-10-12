@@ -1,13 +1,34 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js"
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js"
+
+const firebaseConfig = {
+	apiKey: "AIzaSyCStY_szTbzOfvlYnq32tqmgPAv-aRHPcQ",
+	authDomain: "tarot-layouts.firebaseapp.com",
+	projectId: "tarot-layouts",
+	storageBucket: "tarot-layouts.firebasestorage.app",
+	messagingSenderId: "698149348927",
+	appId: "1:698149348927:web:7b33f5a55dda914ab6fa8a"
+}
+
+const app = initializeApp(firebaseConfig)
+const db = getFirestore(app)
+
+const params = new URLSearchParams(window.location.search)
+const layoutId = params.get("id")
+
+if (!layoutId) alert("ID расклада отсутствует")
+
 let fullInfoObject = null
 
 async function loadLayout() {
-	try {
-		const response = await fetch('./js/test.json')
-		if (!response.ok) throw new Error("Ошибка загрузки JSON")
-		fullInfoObject = await response.json()
+	const docRef = doc(db, "layouts", layoutId);
+	const docSnap = await getDoc(docRef);
+
+	if (docSnap.exists()) {
+		fullInfoObject = docSnap.data()
 		superStarTer()
-	} catch (err) {
-		console.error("Ошибка:", err)
+	} else {
+		alert("Расклад не найден")
 	}
 }
 
