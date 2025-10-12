@@ -59,6 +59,14 @@ const createCardImageUrl = (dateNum) => {
 	return cardPath
 }
 
+const createCardMiniImageUrl = (dateNum) => {
+	const cardPath = (fullInfoObject.days[dateNum - 1].cardType === 'sa')
+		? `./img/cards/${fullInfoObject.deck}/mini/${fullInfoObject.days[dateNum - 1].cardName}.jpg`
+		: `./img/cards/${fullInfoObject.deck}/mini/${fullInfoObject.days[dateNum - 1].cardType}-${fullInfoObject.days[dateNum - 1].cardName}.jpg`
+
+	return cardPath
+}
+
 const createCardReadableDate = (dateNum) => {
 	const readableMonthes = [
 		'января',
@@ -227,17 +235,25 @@ const createCellForDay = (dateNum) => {
 	newCell.append(newCellCard)
 
 	const cardPath = createCardImageUrl(dateNum)
+	const cardPathMini = createCardMiniImageUrl(dateNum)
+
 	const dayCell = document.getElementById(`day${dateNum}`)
 	dayCell.style.boxShadow = `0 0 12px 3px #${fullInfoObject.days[dateNum - 1].color}`
 
 	const cardBlock = dayCell.children[1]
 	cardBlock.innerHTML = ''
 	const img = document.createElement('img')
-	img.src = cardPath
+	img.src = cardPathMini
 	img.alt = 'Карта'
 	img.style.width = '100%'
 	img.style.maxHeight = '100%'
 	cardBlock.appendChild(img)
+
+	const highResImg = new Image()
+	highResImg.src = cardPath
+	highResImg.onload = () => {
+		img.src = cardPath
+	}
 
 	newCell.addEventListener('click', () => {
 		showForm(dateNum)
