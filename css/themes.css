@@ -8,6 +8,8 @@ body::after {
 	height: 100lvh;
 	background: var(--bg-image) center/cover no-repeat;
 	z-index: -2;
+	opacity: 1;
+  transition: background-image 0s, opacity 0.4s ease-in-out;
 }
 
 body::before {
@@ -21,30 +23,6 @@ body::before {
 	background: rgba(255, 255, 255, 0.486);
 	pointer-events: none;
 	z-index: -1;
-}
-
-body.theme__cards-big {
-	--bg-image: url('../img/themes/cards-big.jpg');
-}
-
-body.theme__cards-coffee {
-	--bg-image: url('../img/themes/cards-coffee.jpg');
-}
-
-body.theme__cards-deck {
-	--bg-image: url('../img/themes/cards-deck.jpg');
-}
-
-body.theme__cards-table {
-	--bg-image: url('../img/themes/cards-table.jpg');
-}
-
-body.theme__meditation {
-	--bg-image: url('../img/themes/meditation.jpg');
-}
-
-body.theme__meditation-blue {
-	--bg-image: url('../img/themes/meditation-blue.jpg');
 }
 
 .theme__cards-big .calendar__days-name_day {	

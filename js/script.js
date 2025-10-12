@@ -15,6 +15,23 @@ const calendarDates = document.querySelector('.calendar__dates')
 
 const applyTheme = () => {
 	document.body.classList.add(`theme__${fullInfoObject.theme}`)
+
+	const basePath = '../img/themes'
+	const lowRes = `${basePath}/${fullInfoObject.theme}_mini.jpg`
+	const highRes = `${basePath}/${fullInfoObject.theme}.jpg`
+
+	document.body.style.setProperty('--bg-image', `url('${lowRes}')`)
+
+	requestAnimationFrame(() => {
+		const img = new Image()
+		img.src = highRes
+
+		img.onload = () => {
+			requestAnimationFrame(() => {
+				document.body.style.setProperty('--bg-image', `url('${highRes}')`)
+			})
+		}
+	})
 }
 
 const getNumberOfFirstDay = (y, m) => {
@@ -176,27 +193,27 @@ const changeForm = (dateNum) => {
 }
 
 const changeFormPosition = () => {
-  const formHeight = cardDisplayBlock.offsetHeight
-  const windowHeight = window.innerHeight
-  const scrollY = window.scrollY
-  const pageHeight = document.body.scrollHeight
+	const formHeight = cardDisplayBlock.offsetHeight
+	const windowHeight = window.innerHeight
+	const scrollY = window.scrollY
+	const pageHeight = document.body.scrollHeight
 
-  let top
+	let top
 
-  if (formHeight <= windowHeight) {
-    top = scrollY 
-  } 
-  
-  else if (scrollY + formHeight <= pageHeight) {
-    top = scrollY 
-  } 
-  
-  else {
-    top = pageHeight - formHeight 
-  }
+	if (formHeight <= windowHeight) {
+		top = scrollY
+	}
 
-  cardDisplayBlock.style.top = `${top}px`
-  cardDisplayCloser.style.top = `${top + 30}px`
+	else if (scrollY + formHeight <= pageHeight) {
+		top = scrollY
+	}
+
+	else {
+		top = pageHeight - formHeight
+	}
+
+	cardDisplayBlock.style.top = `${top}px`
+	cardDisplayCloser.style.top = `${top + 30}px`
 }
 
 const showForm = (dateNum) => {
@@ -312,10 +329,20 @@ const changeTitle = () => {
 
 const changeMonthCardImage = () => {
 	const cardPath = (fullInfoObject.monthCard.cardType === 'sa')
-	? `./img/cards/${fullInfoObject.deck}/${fullInfoObject.monthCard.cardName}.jpg`
-	: `./img/cards/${fullInfoObject.deck}/${fullInfoObject.monthCard.cardType}-${fullInfoObject.monthCard.cardName}.jpg`
+		? `./img/cards/${fullInfoObject.deck}/${fullInfoObject.monthCard.cardName}.jpg`
+		: `./img/cards/${fullInfoObject.deck}/${fullInfoObject.monthCard.cardType}-${fullInfoObject.monthCard.cardName}.jpg`
 
-	introCardImage.src = cardPath
+	const cardPathMini = (fullInfoObject.monthCard.cardType === 'sa')
+		? `./img/cards/${fullInfoObject.deck}/mini/${fullInfoObject.monthCard.cardName}.jpg`
+		: `./img/cards/${fullInfoObject.deck}/mini/${fullInfoObject.monthCard.cardType}-${fullInfoObject.monthCard.cardName}.jpg`
+
+	introCardImage.src = cardPathMini
+
+	const highResImg = new Image()
+	highResImg.src = cardPath
+	highResImg.onload = () => {
+		introCardImage.src = cardPath
+	}
 }
 
 const changeMonthCardName = () => {
