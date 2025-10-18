@@ -190,7 +190,20 @@ const changeColor = (dateNum) => {
 	const currDesc = fullInfoObject.days[dateNum - 1].description
 
 	cardDisplayInfoColor.children[0].style.setProperty('--card-color', `#${currColor}`)
-	cardDisplayInfoColor.children[1].innerText = `Цвет энергий дня. ${currDesc}`
+	cardDisplayInfoColor.children[2].innerText = `Цвет энергий дня. ${currDesc}`
+}
+
+const changeColorTwo = (dateNum) => {
+	if (fullInfoObject.days[dateNum - 1].colorTwo) {
+		const currColor = fullInfoObject.days[dateNum - 1].colorTwo
+		const currDesc = fullInfoObject.days[dateNum - 1].description
+
+		cardDisplayInfoColor.children[1].style.display = 'block'
+		cardDisplayInfoColor.children[1].style.setProperty('--card-color', `#${currColor}`)
+		cardDisplayInfoColor.children[2].innerText = `Цвета энергий дня. ${currDesc}`
+	} else {
+		cardDisplayInfoColor.children[1].style.display = 'none'
+	}
 }
 
 const changeText = (dateNum) => {
@@ -208,6 +221,7 @@ const changeForm = (dateNum) => {
 	cardDisplayInfoDate.innerText = createCardReadableDate(dateNum)
 	cardDisplayInfoTitle.innerHTML = createCardReadableCardname(fullInfoObject.days[dateNum - 1].cardType, fullInfoObject.days[dateNum - 1].cardName)
 	changeColor(dateNum)
+	changeColorTwo(dateNum)
 	changeText(dateNum)
 }
 
@@ -265,6 +279,11 @@ const createCellForDay = (dateNum) => {
 	newCellInfo.classList.add('calendar__dates_cell__info')
 	newCell.append(newCellInfo)
 	newCellInfo.innerText = dateNum
+	if (fullInfoObject.days[dateNum - 1].colorTwo) {
+		newCellInfo.style.boxShadow = `0 0 7px 5px #${fullInfoObject.days[dateNum - 1].colorTwo}`
+	} else {
+		newCellInfo.style.boxShadow = `0 0 7px 5px #ffffff`
+	}
 
 	const newCellCard = document.createElement('div')
 	newCellCard.classList.add('calendar__dates_cell__card')
@@ -275,6 +294,7 @@ const createCellForDay = (dateNum) => {
 
 	const dayCell = document.getElementById(`day${dateNum}`)
 	dayCell.style.boxShadow = `0 0 12px 3px #${fullInfoObject.days[dateNum - 1].color}`
+	if (fullInfoObject.days[dateNum - 1].colorTwo) dayCell.style.backgroundColor = `#${fullInfoObject.days[dateNum - 1].colorTwo}33`
 
 	const cardBlock = dayCell.children[1]
 	cardBlock.innerHTML = ''
