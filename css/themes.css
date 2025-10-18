@@ -168,15 +168,15 @@ body::before {
 }
 
 .theme__cards-coffee .intro__date-show_title {
-	background-color: hsl(0, 20%, 9%);
+	background-color: hsl(0, 24%, 15%);
 }
 
 .theme__cards-deck .intro__date-show_title {
-	background-color: hsl(342, 28%, 12%);
+	background-color: hsl(343, 32%, 17%);
 }
 
 .theme__cards-table .intro__date-show_title {
-	background-color: hsl(347, 44%, 8%);
+	background-color: hsl(345, 44%, 15%);
 }
 
 .theme__meditation .intro__date-show_title {
