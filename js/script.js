@@ -363,7 +363,7 @@ const changeTitle = () => {
 		'ноябрь',
 		'декабрь'
 	]
-	introTitle.innerText = `Планер на картах Таро на ${monthRu[fullInfoObject.month - 1]}`
+	introTitle.innerText = `Планер на картах Таро на ${monthRu[fullInfoObject.month - 1]} ${fullInfoObject.year} г.`
 }
 
 const changeMonthCardImage = () => {
