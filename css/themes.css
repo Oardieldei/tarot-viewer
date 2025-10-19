@@ -149,9 +149,10 @@ body::before {
 }
 
 .header__brand {
-	font-family: "Marck Script", cursive;
+	font-family: "Metal", serif;
 	font-size: 56px;
 	color: aliceblue;
+	white-space: nowrap;
 	text-shadow: 0 0 3px hsl(0, 0%, 66%),
 	0 0 5px hsl(0, 0%, 0%),
 	0 0 4px hsla(0, 0%, 100%, 0.4),
@@ -185,4 +186,10 @@ body::before {
 
 .theme__meditation-blue .intro__date-show_title {
 	background-color: hsl(266, 29%, 41%);
+}
+
+@media (max-width: 350px) {
+	.header__brand {
+		font-size: 48px;
+	}
 }
