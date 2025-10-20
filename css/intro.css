@@ -18,15 +18,21 @@
 	font-size: 24px;
 	color: #000;
 	text-align: center;
-}
-
-.intro__month-info > * {
 	max-width: 300px;
 	margin: 0 auto;
 }
 
 .intro__month-info_image {
 	border-radius: 10px;
+	width: 100%;
+	max-width: 300px;
+	margin: 0 auto;
+	transition: .2s;
+}
+
+.intro__month-info_image:hover {
+	cursor: pointer;
+	transform: scale(1.04, 1.04);
 }
 
 .intro__date-show_title {

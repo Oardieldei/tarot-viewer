@@ -376,6 +376,7 @@ const changeMonthCardImage = () => {
 		: `./img/cards/${fullInfoObject.deck}/mini/${fullInfoObject.monthCard.cardType}-${fullInfoObject.monthCard.cardName}.jpg`
 
 	introCardImage.src = cardPathMini
+	introCardImage.style.boxShadow = `0 0 7px 5px #${fullInfoObject.monthCard.color}`
 
 	const highResImg = new Image()
 	highResImg.src = cardPath
@@ -434,4 +435,54 @@ wdayBtn.addEventListener('click', () => {
 	} else {
 		wdayInput.value = ""
 	}
+})
+
+introCardImage.addEventListener('click', () => {
+	const cardPath = (fullInfoObject.monthCard.cardType === 'sa')
+		? `./img/cards/${fullInfoObject.deck}/${fullInfoObject.monthCard.cardName}.jpg`
+		: `./img/cards/${fullInfoObject.deck}/${fullInfoObject.monthCard.cardType}-${fullInfoObject.monthCard.cardName}.jpg`
+	cardDisplayImg.src = cardPath
+
+	const monthRus = [
+		'Январь',
+		'Февраль',
+		'Март',
+		'Апрель',
+		'Май',
+		'Июнь',
+		'Июль',
+		'Август',
+		'Сентябрь',
+		'Октябрь',
+		'Ноябрь',
+		'Декабрь'
+	]
+	cardDisplayInfoDate.innerText = monthRus[fullInfoObject.month - 1]
+	cardDisplayInfoTitle.innerHTML = createCardReadableCardname(fullInfoObject.monthCard.cardType, fullInfoObject.monthCard.cardName)
+	
+	const currColor = fullInfoObject.monthCard.color
+	const currDesc = fullInfoObject.monthCard.description
+	if (fullInfoObject.monthCard.colorTwo) {
+		const currColorTwo = fullInfoObject.monthCard.colorTwo
+		cardDisplayInfoColor.children[1].style.display = 'block'
+		cardDisplayInfoColor.children[0].style.setProperty('--card-color', `#${currColor}`)
+		cardDisplayInfoColor.children[1].style.setProperty('--card-color', `#${currColorTwo}`)
+		cardDisplayInfoColor.children[2].innerText = `Цвета энергий месяца. ${currDesc}`
+	} else {
+		cardDisplayInfoColor.children[1].style.display = 'none'
+		cardDisplayInfoColor.children[0].style.setProperty('--card-color', `#${currColor}`)
+		cardDisplayInfoColor.children[2].innerText = `Цвет энергий месяца. ${currDesc}`
+	}
+
+	if (fullInfoObject.monthCard.text === '') {
+		cardDisplayInfoText.style.display = 'none'
+	} else {
+		cardDisplayInfoText.style.display = 'block'
+	}
+	cardDisplayInfoText.innerHTML = fullInfoObject.monthCard.text
+
+	changeFormPosition()
+	requestAnimationFrame(() => {
+		cardDisplay.classList.add('show-on')
+	})
 })
