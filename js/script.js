@@ -1,14 +1,6 @@
+import { firebaseConfig } from './firebase.js'
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js"
 import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js"
-
-const firebaseConfig = {
-	apiKey: "AIzaSyCStY_szTbzOfvlYnq32tqmgPAv-aRHPcQ",
-	authDomain: "tarot-layouts.firebaseapp.com",
-	projectId: "tarot-layouts",
-	storageBucket: "tarot-layouts.firebasestorage.app",
-	messagingSenderId: "698149348927",
-	appId: "1:698149348927:web:7b33f5a55dda914ab6fa8a"
-}
 
 const app = initializeApp(firebaseConfig)
 const db = getFirestore(app)
